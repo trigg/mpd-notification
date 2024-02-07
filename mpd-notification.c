@@ -412,7 +412,7 @@ int main(int argc, char ** argv) {
 		mpd_command_list_end(conn);
 
 		state = mpd_status_get_state(mpd_recv_status(conn));
-		if (state == MPD_STATE_PLAY || state == MPD_STATE_PAUSE) {
+		if (state == MPD_STATE_PLAY) {
 			/* There's a bug in libnotify where the server spec version is fetched
 			 * too late, which results in issue with image date. Make sure to
 			 * show a notification without image data (just generic icon) first. */
@@ -472,13 +472,8 @@ int main(int argc, char ** argv) {
 			}
 
 			mpd_song_free(song);
-		} else if (state == MPD_STATE_STOP) {
-			notifystr = strdup(TEXT_STOP);
-#ifdef HAVE_SYSTEMD
-			sd_notify(0, "READY=1\nSTATUS=" TEXT_STOP);
-#endif
 		} else
-			notifystr = strdup(TEXT_UNKNOWN);
+			goto nonotification;
 
 		last_state = state;
 

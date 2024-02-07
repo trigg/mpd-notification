@@ -27,8 +27,8 @@
 
 /* strings used to display notification messages
  * TEXT_PLAY_* need to include one string modifier '%s' each. */
-#define TEXT_TOPIC		"MPD Notification"
-#define TEXT_PLAY_PAUSE_STATE	"%s "
+#define TEXT_TOPIC		"Now Playing"
+#define TEXT_PLAY_PAUSE_STATE	""
 #define TEXT_PLAY_PAUSE_TITLE	"<b>%s</b>"
 #define TEXT_PLAY_PAUSE_ARTIST	"by <i>%s</i>"
 #define TEXT_PLAY_PAUSE_ALBUM	"from <i>%s</i>"
@@ -38,7 +38,7 @@
 
 /* this is a regular expression that has to match image filename used
  * for artwork */
-#define REGEX_ARTWORK	"\\(folder\\|cover\\)\\.\\(jpg\\|png\\)"
+#define REGEX_ARTWORK	"\\(folder\\|cover\\|AlbumArt\\)\\.\\(jpg\\|png\\)"
 
 /* how to connect to mpd host ?
  * MPD_HOST is the server's host name, IP address or Unix socket path. If the
