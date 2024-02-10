@@ -1,0 +1,15 @@
+[package]
+name = "mpd-notification"
+version = "0.1.0"
+edition = "2021"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+lazy_static = "1.4"
+mpd = "0.1.0"
+config = "0.14.0"
+notify = "6.0"
+directories = "5.0.1"
+notify-rust = "4.10.0"
+lazy-regex="3.1.0"
